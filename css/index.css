@@ -4,18 +4,22 @@ body, html{
 	width: 100%;
 	height: 100%;
 }
-section{
+section,
+aside,
+nav{
 	display: block;
 }
 .container{
 	position: absolute;
+	top: 1em;
+	left: 0.5em;
 	z-index: 1;
 }
 svg{
 	height: 500px;
 }
 .canvas{
-	background-color: rgba( 100, 100, 100, 0.3 );
+	background-color: rgba( 100, 100, 100, 0.1 );
 	position: absolute;
 	top: 0;
 	width: 100%;

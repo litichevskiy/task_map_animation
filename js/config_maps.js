@@ -12,7 +12,7 @@ var maps = {
     	        "stroke-linejoin": "round"
     	    },
     	    attrsHover: {
-    	        fill: "#f38a03",
+    	        fill: "#97C5EC",
     	        animDuration: 100
     	    },
     		},

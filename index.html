@@ -4,11 +4,29 @@
 		<title>task_map_animation</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="./css/point.css">
+		<link rel="stylesheet" type="text/css" href="./css/select_scenario.css">
 	</head>
 	<body>
 		<div class="container">
     		<section class="map"></section>
 			<canvas class="canvas"></canvas>
+			<span class="point_info"></span>
+			<aside class="select_scen">
+				<nav>
+					<label class="select">
+						<input type="radio" name="select" checked="true">по умолчанию</input>
+					</label>
+					<label class="select">
+						<input type="radio" name="select">сценарий 1</input>
+					</label>
+					<label class="select">
+						<input type="radio" name="select">сценарий 2</input>
+					</label>
+					<button class="new_points">выбрать свои точки</button>
+					<button class="save_new_points">готово</button>
+				</nav>
+			</aside>
 		</div>
 
 		<script src="./js/library/jquery.min.js"></script>
@@ -16,7 +34,11 @@
 		<script src="./js/library/jquery.mapael.min.js"></script>
 		<script src="./maps/map_Ukraine.js"></script>
 		<script src="./js/config_maps.js"></script>
+		<script src="./js/pubsub.js"></script>
 		<script src="./js/block_map.js"></script>
+		<script src="./js/point.js"></script>
+		<script src="./js/main_point.js"></script>
+		<script src="./js/select_scen.js"></script>
 		<script src="./js/index.js"></script>
 	</body>
 </html>

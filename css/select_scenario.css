@@ -1,0 +1,46 @@
+input{
+	outline: none;
+	margin-right: 1em;
+}
+.select_scen{
+	position: fixed;
+	right: 0.5em;
+	top: 1em;
+	background-color: white;
+	width: 230px;
+}
+.select{
+	display: block;
+	font-size: 25px;
+	color: grey;
+	border-radius: 10px;
+	margin-top: 0.2em;
+	padding-left: 0.5em;
+}
+.select:hover,
+.new_points:hover,
+.save_new_points:hover{
+	background-color: beige;
+	cursor: pointer;
+}
+.new_points,
+.save_new_points{
+	width: 100%;
+	outline: none;
+	padding: 0.5em;
+	background-color: white;
+	border-radius: 10px;
+	color: grey;
+	border: none;
+	font-size: 20px;
+	background-color: lavender;
+	margin-top: 0.3em;
+}
+.new_points:active,
+.save_new_points:active{
+	background-color: lightblue;
+	color: white;
+}
+.save_new_points{
+	display: none;
+}
