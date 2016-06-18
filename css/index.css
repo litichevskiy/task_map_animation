@@ -1,0 +1,24 @@
+body, html{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+section{
+	display: block;
+}
+.container{
+	position: absolute;
+	z-index: 1;
+}
+svg{
+	height: 500px;
+}
+.canvas{
+	background-color: rgba( 100, 100, 100, 0.3 );
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
