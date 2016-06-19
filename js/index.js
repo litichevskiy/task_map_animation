@@ -9,8 +9,8 @@
 	});
 
 	var selectBlock = new SelectBlock({
-		pubsub    : pubsub,
-		container : $('.select_scen')
+		pubsub         : pubsub,
+		container      : $('.select_scen')
 	});
 
 	document.addEventListener("DOMContentLoaded", function() {

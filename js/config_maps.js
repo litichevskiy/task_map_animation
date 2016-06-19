@@ -7,7 +7,7 @@ var maps = {
     		defaultArea : {
     		attrs: {
     	        fill: "#9EBEDA",
-    	        stroke: "#5d5d5d",
+    	        stroke: "lightgrey", //"#5d5d5d"
     	        "stroke-width": 0.5,
     	        "stroke-linejoin": "round"
     	    },
@@ -23,7 +23,7 @@ var maps = {
     				content: "Zhytomyr",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},
@@ -32,7 +32,7 @@ var maps = {
     				content : 'Zaporizhia',
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},
@@ -41,7 +41,7 @@ var maps = {
     				content: "Zakarpattia",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},
@@ -50,7 +50,7 @@ var maps = {
     				content: "Volyn",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Vinnytsia" : {
@@ -58,7 +58,7 @@ var maps = {
     				content: "Vinnytsia",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Ivano-Frankivsk" : {
@@ -66,7 +66,7 @@ var maps = {
     				content: "Ivano-Frankivsk",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Sumy" : {
@@ -74,7 +74,7 @@ var maps = {
     				content: "Sumy",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Sevastopol" : {
@@ -82,7 +82,7 @@ var maps = {
     				content: "Sevastopol",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Rivne" : {
@@ -90,7 +90,7 @@ var maps = {
     				content: "Rivne",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Ternopil" : {
@@ -98,7 +98,7 @@ var maps = {
     				content: "Ternopil",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Poltava" : {
@@ -106,7 +106,7 @@ var maps = {
     				content: "Poltava",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Odessa" : {
@@ -114,7 +114,7 @@ var maps = {
     				content: "Odessa",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Mykolaiv" : {
@@ -122,7 +122,7 @@ var maps = {
     				content: "Mykolaiv",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Lviv" : {
@@ -130,7 +130,7 @@ var maps = {
     				content: "Lviv",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Luhansk" : {
@@ -138,7 +138,7 @@ var maps = {
     				content: "Luhansk",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Kirovohrad" : {
@@ -146,7 +146,7 @@ var maps = {
     				content: "Kirovohrad",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Kiev" : {
@@ -154,7 +154,7 @@ var maps = {
     				content: "Kiev",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Kiev City" : {
@@ -162,7 +162,7 @@ var maps = {
     				content: "Kiev City",
     				attrs: {
     	                "font-size": 3,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Khmelnytskyi" : {
@@ -170,7 +170,7 @@ var maps = {
     				content: "Khmelnytskyi",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Kherson" : {
@@ -178,7 +178,7 @@ var maps = {
     				content: "Kherson",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Kharkiv" : {
@@ -186,7 +186,7 @@ var maps = {
     				content: "Kharkiv",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Donetsk" : {
@@ -194,7 +194,7 @@ var maps = {
     				content: "Donetsk",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Dnipropetrovsk" : {
@@ -202,7 +202,7 @@ var maps = {
     				content: "Dnipropetrovsk",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Chernivtsi" : {
@@ -210,7 +210,7 @@ var maps = {
     				content: "Chernivtsi",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Chernihiv" : {
@@ -218,7 +218,7 @@ var maps = {
     				content: "Chernihiv",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Cherkasy" : {
@@ -226,7 +226,7 @@ var maps = {
     				content: "Cherkasy",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},"Crimea" : {
@@ -234,7 +234,7 @@ var maps = {
     				content: "Crimea",
     				attrs: {
     	                "font-size": 8,
-    	                fill: "#FFF"
+    	                fill: "#000"
     	            }
     			}
     		},

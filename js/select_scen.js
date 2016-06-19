@@ -11,14 +11,13 @@
 		$( this.container ).click(function( event ) {
 
 			if ( event.target.tagName !== 'LI' ) return;
-
 			var scen = event.target.dataset.role;
 
-			that.pubsub.publish('new_scen', scen );
-
-			changeClass( that.list );
+				that.pubsub.publish('new_scen', scen );
+				changeClass( that.list );
 		});
 	}
+
 
 	var changeClass = (function() {
 		var CLASS_AKTIVE = 'active';

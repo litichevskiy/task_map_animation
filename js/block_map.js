@@ -1,8 +1,5 @@
 (function( exports ) {
 
-	const
-		POINT_IS_SET = 'point_is_set';
-
 	function BlockMap( param ) {
 
 		this.container = param.container;
@@ -14,8 +11,6 @@
 		this.storageCoord = getCoordinates( this.container );
 		this.createPoints( param.points );
 
-		this.pubsub.subscribe( 'clear', this.changeScen );
-
 		var that = this;
 
 		$( this.canvas ).click(function(event) {
@@ -23,7 +18,9 @@
 			that.context.clearRect( 0, 0, that.canvas.width, that.canvas.height );
 		});
 
+		this.pubsub.subscribe( 'clear', this.changeScen );
 	}
+
 
 	BlockMap.prototype.createPoints = function( list ) {
 
@@ -32,9 +29,7 @@
 			that = this,
 			main_point = list[ 0 ],
 			coordPoints = [],
-			top, left, main_left, main_top;
-
-			list.splice( 0, 1 );
+			top, left, main_left, main_top, length, item;
 
 		point = new MainPoint({
 			top       : this.storageCoord[ main_point ].top,
@@ -51,7 +46,11 @@
 
 		fragment.appendChild( point.container[ 0 ] );
 
-		list.forEach( function( item ) {
+		length = list.length;
+
+		for( var i = 1; i < length; i++ ) {
+
+			item = list[i];
 
 			top = that.storageCoord[item].top;
 			left = that.storageCoord[item].left;
@@ -76,34 +75,40 @@
 				left : left,
 				top  : top
 			});
-		});
+		};
 
 		$( that.container ).append( fragment );
 	};
 
 
-	BlockMap.prototype.add_class = function( value ) {
+	BlockMap.prototype.add_class = (function() {
+		var point_is_set = 'point_is_set';
 
-		this.storagePoints.some( function( item ) {
+		return function( value ) {
 
-			if( item.attributes['data-id'].value === value ) {
-				$( item ).addClass( POINT_IS_SET );
-				return true;
-			}
+			this.storagePoints.some( function( item ) {
 
-		});
-	};
+				if( item.attributes['data-id'].value === value ) {
+					$( item ).addClass( point_is_set );
+					return true;
+				}
+			});
+		}
+	})();
 
 
 	BlockMap.prototype.changeScen = function( scen ) {};
+
 
 	function initMap( container ) {
 		container.mapael(maps.ukraine);
 	}
 
+
 	function getAllAreas( container ) {
 		return $(container).find('path').toArray();
 	}
+
 
 	function getCoordinates( container ) {
 		var coordinates = {},
@@ -118,7 +123,6 @@
 				left : Math.round( coord.left ),
 				top  : Math.round( coord.top )
 			}
-
 		});
 
 		return coordinates;

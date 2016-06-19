@@ -1,12 +1,5 @@
 (function( exports ) {
 
-	const
-		SCEN_1 = 'scen_1',
-		SCEN_2 = 'scen_2',
-		DEFAULT = 'default',
-		CURVE = 60, // px
-		PADDING = 10; // px
-
 	function MainPoint( param ) {
 
 		Point.call( this, param );
@@ -29,12 +22,10 @@
 
 		this.pubsub.subscribe( 'showName', this.showName.bind( this ) );
 		this.pubsub.subscribe( 'clear', this.hideName.bind( this ) );
-
 	}
 
 
 	MainPoint.prototype.hideName = function() {
-
 		$( this.point_info ).text();
 		$( this.point_info ).hide('fast');
 	};
@@ -53,46 +44,62 @@
 	};
 
 
-	MainPoint.prototype.addLine = function( listCoord ) {
+	MainPoint.prototype.addLine = (function() {
+		var padding = 10; // px
 
-		if( !this.create_line ) return;
+		return function( listCoord ) {
 
-		var that = this;
+			if( !this.create_line ) return;
 
-		listCoord.forEach( function( item ) {
-			MainPoint.createLine({
-				context : that.context,
-				x1  : that.left + PADDING, y1  : that.top + PADDING,
-				cx1 : that.left + CURVE, cy1 : that.top + CURVE,
-				x2  : item.left, y2  : item.top
+			var that = this;
+
+			listCoord.forEach( function( item ) {
+				MainPoint.createLine({
+					context : that.context,
+					x1  : that.left + padding, y1  : that.top + padding,
+					cx1 : item.left - that.left, cy1 : item.top - that.top,
+					x2  : item.left, y2  : item.top
+				});
 			});
-		});
 
-		$( this.canvas ).css({'z-index':0});
-		this.pubsub.publish('show_name');
-	};
-
-
-	MainPoint.prototype.changeScen = function( scen ) {
-
-		if ( scen === SCEN_1 ) {
-			this.create_line = true;
-			this.default = true;//////////////
-			$( this.container ).addClass('active_point');
-			return
+			$( this.canvas ).css({'z-index':0});
+			this.pubsub.publish('show_name');
 		}
+	})();
 
-		if ( scen === DEFAULT ) {
-			this.create_line = false;
-			this.default = true;//////////////
-			$( this.container ).removeClass('active_point');
-		}
 
-		if ( scen === SCEN_2 ) {
-			this.default = false;
-			this.create_line = false;
-			$( this.container ).addClass('active_point');
+	MainPoint.prototype.changeScen = (function() {
+		var scen_1 = 'scen_1', scen_2 = 'scen_2',
+			_default = 'default';
+
+		return function( scen ) {
+
+			if ( scen === scen_1 ) {
+				this.create_line = true;
+				this.default = true;
+				$( this.container ).addClass('active_point');
+				return
+			}
+
+			if ( scen === _default ) {
+				this.create_line = false;
+				this.default = true;
+				$( this.container ).removeClass('active_point');
+				return
+			}
+
+			if ( scen === scen_2 ) {
+				this.default = false;
+				this.create_line = false;
+				$( this.container ).addClass('active_point');
+			}
 		}
+	})();
+
+
+	MainPoint.prototype.deleteElements = function(){
+		$( this.container ).remove();
+		$( this.point_info ).remove();
 	};
 
 
@@ -105,7 +112,7 @@
 		data.context.quadraticCurveTo( data.cx1, data.cy1, data.x2, data.y2 );
 		data.context.strokeStyle = 'gold';
 		data.context.stroke();
-	}
+	};
 
 	exports.MainPoint = MainPoint;
 

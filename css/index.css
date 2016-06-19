@@ -33,4 +33,6 @@ svg{
 	font-family: cursive;
 	margin: 2em auto;
 	width: 10em;
+	z-index: 3;
+	position: relative;
 }
