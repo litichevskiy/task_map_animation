@@ -8,23 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="./css/select_scenario.css">
 	</head>
 	<body>
+		<h1 class="load">LOADING :(</h1>
 		<div class="container">
     		<section class="map"></section>
-			<canvas class="canvas"></canvas>
-			<span class="point_info"></span>
+			<canvas class="canvas" width="1000px" height="500px" ></canvas>
 			<aside class="select_scen">
 				<nav>
-					<label class="select">
-						<input type="radio" name="select" checked="true">по умолчанию</input>
-					</label>
-					<label class="select">
-						<input type="radio" name="select">сценарий 1</input>
-					</label>
-					<label class="select">
-						<input type="radio" name="select">сценарий 2</input>
-					</label>
-					<button class="new_points">выбрать свои точки</button>
-					<button class="save_new_points">готово</button>
+					<ul class="select_list" >
+						<li class="select_item active" data-role="default">по умолчанию</li>
+						<li class="select_item" data-role="scen_1">сценарий 1</li>
+						<li class="select_item" data-role="scen_2">сценарий 2</li>
+						<li class="select_item">выбрать свои точки</li>
+						<li class="select_item save_new_points">готово</li>
+					</ul>
 				</nav>
 			</aside>
 		</div>

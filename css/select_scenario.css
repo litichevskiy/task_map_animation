@@ -1,6 +1,5 @@
-input{
-	outline: none;
-	margin-right: 1em;
+button::-moz-focus-inner{
+	border:none;
 }
 .select_scen{
 	position: fixed;
@@ -9,22 +8,25 @@ input{
 	background-color: white;
 	width: 230px;
 }
-.select{
-	display: block;
+.select_list{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.select_item{
 	font-size: 25px;
 	color: grey;
 	border-radius: 10px;
 	margin-top: 0.2em;
 	padding-left: 0.5em;
 }
-.select:hover,
+.select_item:hover,
 .new_points:hover,
 .save_new_points:hover{
 	background-color: beige;
 	cursor: pointer;
 }
-.new_points,
-.save_new_points{
+.new_points{
 	width: 100%;
 	outline: none;
 	padding: 0.5em;
@@ -43,4 +45,7 @@ input{
 }
 .save_new_points{
 	display: none;
+}
+.active{
+	background-color: lightblue;
 }

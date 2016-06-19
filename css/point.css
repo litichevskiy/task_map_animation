@@ -10,6 +10,8 @@
 	box-shadow: 0.5px 0px 9px 2px #3F51B5;
 	opacity: 0.5;
 	z-index: 1;
+	border: none;
+	outline: none;
 }
 .active_point:hover{
 	background-color: #3F51B5;
@@ -20,13 +22,21 @@
 
 @keyframes eye {
     100% { transform: scale(1.7); }
-
+}
+.active_point:active{
+	background-color: red;
+	animation: act 0.8s infinite;
+	box-shadow: 0.5px 0px 9px 2px #FFEB3B;
+	opacity: 0.6;
+}
+@keyframes act {
+    100% { transform: scale( 2.2 ); }
 }
 .point_info{
 	position: absolute;
 	display: none;
 	padding: 1em;
 	border-radius: 10px;
-	color: #0F6AB3;
-	background-color: rgba( 255, 255, 255, 0.5 );
+	color: #FFFFFF;
+	background-color: rgba( 195, 202, 90, 0.8 );
 }
