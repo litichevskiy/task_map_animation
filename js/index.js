@@ -13,8 +13,12 @@
 		container : $('.select_scen')
 	});
 
-	window.onload = function() {
-		$('.load').hide('')
-	}
+	document.addEventListener("DOMContentLoaded", function() {
+		$('.load').hide('fast');
+		$('.select_scen').show();
+		$('.container').css({
+			'opacity' : 1
+		});
+	});
 
 })();

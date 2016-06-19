@@ -14,14 +14,15 @@
 		this.storageCoord = getCoordinates( this.container );
 		this.createPoints( param.points );
 
-		this.pubsub.subscribe( 'new_scen', this.changeScen );
+		this.pubsub.subscribe( 'clear', this.changeScen );
 
 		var that = this;
 
 		$( this.canvas ).click(function(event) {
-			that.pubsub.publish('new_scen');
+			that.pubsub.publish( 'clear', 'clear' );
 			that.context.clearRect( 0, 0, that.canvas.width, that.canvas.height );
 		});
+
 	}
 
 	BlockMap.prototype.createPoints = function( list ) {
@@ -31,10 +32,24 @@
 			that = this,
 			main_point = list[ 0 ],
 			coordPoints = [],
-			top, left;
+			top, left, main_left, main_top;
 
 			list.splice( 0, 1 );
 
+		point = new MainPoint({
+			top       : this.storageCoord[ main_point ].top,
+			left      : this.storageCoord[ main_point ].left,
+			name      : main_point,
+			main_cont : this.container,
+			pubsub    : this.pubsub,
+			points    : coordPoints,
+			canvas    : this.canvas
+		});
+
+		main_top = this.storageCoord[ main_point ].top;
+		main_left = this.storageCoord[ main_point ].left;
+
+		fragment.appendChild( point.container[ 0 ] );
 
 		list.forEach( function( item ) {
 
@@ -47,7 +62,11 @@
 				name      : item,
 				main_cont : that.container,
 				pubsub 	  : that.pubsub,
-				canvas    : that.canvas
+				canvas    : that.canvas,
+				coord_main_points : {
+					left : main_left,
+					top  : main_top
+				}
 			});
 
 			that.add_class( item );
@@ -58,18 +77,6 @@
 				top  : top
 			});
 		});
-
-		point = new MainPoint({
-			top       : this.storageCoord[ main_point ].top,
-			left      : this.storageCoord[ main_point ].left,
-			name      : main_point,
-			main_cont : this.container,
-			pubsub    : this.pubsub,
-			points    : coordPoints,
-			canvas    : this.canvas
-		});
-
-		fragment.appendChild( point.container[ 0 ] );
 
 		$( that.container ).append( fragment );
 	};
@@ -88,12 +95,9 @@
 	};
 
 
-	BlockMap.prototype.changeScen = function( scen ) {
-		console.log( 'BlockMap' );
-	};
+	BlockMap.prototype.changeScen = function( scen ) {};
 
 	function initMap( container ) {
-
 		container.mapael(maps.ukraine);
 	}
 

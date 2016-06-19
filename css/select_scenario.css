@@ -2,6 +2,7 @@ button::-moz-focus-inner{
 	border:none;
 }
 .select_scen{
+	display: none;
 	position: fixed;
 	right: 0.5em;
 	top: 1em;
